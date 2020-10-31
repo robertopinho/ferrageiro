@@ -1,0 +1,34 @@
+{
+  "name": "ferrageiro",
+  "version": "1.0.0",
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "dependencies": {
+    "@vue/cli-service": "^4.5.4",
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "jspdf": "^2.1.1",
+    "jspdf-autotable": "^3.5.13",
+    "material-icons": "^0.3.1",
+    "pdf-lib": "^1.11.2",
+    "serve": "^11.3.2",
+    "vue": "^2.6.12",
+    "vue-numeric-input": "^1.0.6",
+    "vue-router": "^3.4.3",
+    "vuesax": "^4.0.1-alpha.24"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "vue-devtools": "^5.1.4",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
