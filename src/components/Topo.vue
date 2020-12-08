@@ -58,7 +58,7 @@
         <vs-sidebar-item flat id="pedidoaberto"
           >Pedidos em Aberto</vs-sidebar-item
         >
-        <vs-sidebar-item flat id="listagempedidos"
+        <vs-sidebar-item flat :to="{name : 'listagem-de-pedidos'}" id="listagempedidos"
           >Listagem de Pedidos</vs-sidebar-item
         >
         <vs-sidebar-item flat :to="{ name: 'novo-pedido' }" id="abrirpedido"

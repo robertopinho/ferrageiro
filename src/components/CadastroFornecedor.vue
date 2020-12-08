@@ -140,12 +140,12 @@ export default {
 
   methods: {
     salvar() {
-      if (!this.$router.push("/")){
-        this.$router.push("/");
-        this.listar();
+      // if (!this.$router.push("/")){
+      //   this.$router.push("/");
+      //   this.listar();
     
-        return;
-      }
+      //   return;
+      // }
 
       axios.post(this.$urlAPI + `/fornecedores`, this.fornecedores);
       alert("OK! Fornecedor cadastrado com sucesso.");

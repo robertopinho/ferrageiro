@@ -90,18 +90,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in pedido" v-bind:key="item.id">
-              <td>{{ item.nome }}</td>
-              <th>{{ item.quant_compra }}</th>
-              <td>R$ {{ item.valor_venda | estiloMoeda }}</td>
+            <tr v-for="pedido in pedido" v-bind:key="pedido.id">
+              <td>{{ pedido.nome }}</td>
+              <th>{{ pedido.quant_compra }}</th>
+              <td>R$ {{ pedido.valor_venda | estiloMoeda }}</td>
               <td>
-                R$ {{ (item.valor_venda * item.quant_compra) | estiloMoeda }}
+                R$ {{ (pedido.valor_venda * pedido.quant_compra) | estiloMoeda }}
               </td>
               <td class="d-flex justify-content-center">
                 <button
                   class="btn btn-sm text-danger d-flex"
                   title="Remover do Carrinho"
-                  @click="remover(item)"
+                  @click="remover(pedido)"
                 >
                   <i class="fas fa-trash"></i>
                 </button>
@@ -112,7 +112,7 @@
         <div class="d-flex">
           <div class="bg-success text-center col-10">
             <h3 class="text-white" id="valortotal">
-              Total compra: R$ {{ valorTotal | estiloMoeda }}
+              <!-- Total compra: R$ {{ valorTotal | estiloMoeda }} -->
             </h3>
           </div>
           <button type="submit" class="btn-dark">Realizar venda</button>
@@ -130,7 +130,15 @@ export default {
     return {
       clientes: [],
       marcas: [],
-      produtos: [],
+      produtos: [
+        {
+          id: null,
+          nome: null,
+          marca_id: null,
+          quant_compra: null,
+          valor_venda: null,
+        }
+      ],
       pesquisa: "",
       pedido: [],
     };
@@ -191,7 +199,7 @@ export default {
         console.log("sads", this.pedido);
 
         axios
-          .post(this.$urlAPI + "/pedido", this.pedido)
+          .post(this.$urlAPI + "/carrinho", this.pedido)
           .then((response) => {
             console.log("res", response);
           })
@@ -201,18 +209,18 @@ export default {
       }
     },
   },
-  computed: {
-    valorTotal() {
-      if (!this.pedido) {
-        return;
-      }
-      let total = 0;
-      this.pedido.map((item) => {
-        total = total + item.valor_venda * item.quant_compra;
-      });
-      return total;
-    },
-  },
+  // computed: {
+  //   valorTotal() {
+  //     if (!this.pedido) {
+  //       return;
+  //     }
+  //     let total = 0;
+  //     this.pedido.map((item) => {
+  //       total = total + (item.valor_venda * item.quant_compra);
+  //     });
+  //     return total;
+  //   },
+  // },
   mounted() {
     this.listar();
     if (localStorage.getItem("token")) {

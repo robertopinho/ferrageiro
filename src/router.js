@@ -12,6 +12,7 @@ import CadastroMarca from './components/CadastroMarca.vue'
 import CadastroCategoria from './components/CadastroCategoria.vue'
 import ListagemProdutos from './components/ListagemProdutos.vue'
 import ListagemClientes from './components/ListagemClientes.vue'
+import ListagemPedidos from './components/ListagemPedidos.vue'
 import ProdutosDestaque from './components/ProdutosDestaque.vue'
 import RelatorioListagemClientes from './components/RelatorioListagemClientes.vue'
 import RelatorioListagemProdutos from './components/RelatorioListagemProdutos.vue'
@@ -34,6 +35,7 @@ export default new VueRouter({
         //Listagem
         { path: '/listagemprodutos', name: 'listagem-de-produtos', component: ListagemProdutos },
         { path: '/listagemclientes', name: 'listagem-de-clientes', component: ListagemClientes },
+        { path: '/listagempedidos', name: 'listagem-de-pedidos', component: ListagemPedidos },
         { path: '/destaques', name: 'produtos-em-destaque', component: ProdutosDestaque },
         //Pedidos
         { path: '/abrirpedido', name: 'novo-pedido', component: AbrirPedido },
