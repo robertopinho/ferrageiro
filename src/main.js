@@ -7,7 +7,9 @@ import VueNumericInput from 'vue-numeric-input';
 import 'material-icons/iconfont/material-icons.css';
 Vue.config.productionTip = false
 //cria variavel global
-Vue.prototype.$urlAPI = 'http://localhost:5000'
+// Vue.prototype.$urlAPI = 'http://localhost:5000'
+Vue.prototype.$urlAPI = 'http://robertoopinho.pythonanywhere.com/'
+
 Vue.use(VueNumericInput)
 Vue.use(Vuesax, {
   // options here
