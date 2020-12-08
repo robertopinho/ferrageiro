@@ -117,7 +117,7 @@
           </div>
           <button type="submit" class="btn-dark">Realizar venda</button>
         </div>
-        <pre>{{ pedido }}</pre>
+        <!-- <pre>{{ pedido }}</pre> -->
       </form>
     </div>
   </div>
