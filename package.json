@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "## Project setup ``` npm install ```",
   "main": "babel.config.js",
-  "start": "npm run serve",
   "dependencies": {
     "@vue/cli-service": "^4.5.4",
     "axios": "^0.20.0",
@@ -27,7 +26,8 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
