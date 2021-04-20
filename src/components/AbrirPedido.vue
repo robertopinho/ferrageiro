@@ -112,12 +112,12 @@
         <div class="d-flex">
           <div class="bg-success text-center col-10">
             <h3 class="text-white" id="valortotal">
-              <!-- Total compra: R$ {{ valorTotal | estiloMoeda }} -->
+              Total compra: R$ {{ valorTotal | estiloMoeda }}
             </h3>
           </div>
           <button type="submit" class="btn-dark">Realizar venda</button>
         </div>
-        <!-- <pre>{{ pedido }}</pre> -->
+        <pre>{{ pedido }}</pre>
       </form>
     </div>
   </div>
@@ -135,8 +135,8 @@ export default {
           id: null,
           nome: null,
           marca_id: null,
-          quant_compra: null,
-          valor_venda: null,
+          quant_compra: 0,
+          valor_venda: 0,
         }
       ],
       pesquisa: "",
@@ -195,32 +195,28 @@ export default {
       if (this.valorTotal == 0) {
         alert("Carrinho vazio");
       } else {
-        // const carrinho_id;
-        console.log("sads", this.pedido);
-
         axios
-          .post(this.$urlAPI + "/carrinho", this.pedido)
+          .post(this.$urlAPI + "/pedido", this.pedido)
           .then((response) => {
-            console.log("res", response);
+            console.log("POST CARRINHO >>>>>> ", response);
           })
-
           .catch((error) => console.log("err >>", error));
         this.pedido = {};
       }
     },
   },
-  // computed: {
-  //   valorTotal() {
-  //     if (!this.pedido) {
-  //       return;
-  //     }
-  //     let total = 0;
-  //     this.pedido.map((item) => {
-  //       total = total + (item.valor_venda * item.quant_compra);
-  //     });
-  //     return total;
-  //   },
-  // },
+  computed: {
+    valorTotal() {
+      if (!this.pedido) {
+        return;
+      }
+      let total = 0;
+      this.pedido.map((item) => {
+        total = total + (item.valor_venda * item.quant_compra);
+      });
+      return total;
+    },
+  },
   mounted() {
     this.listar();
     if (localStorage.getItem("token")) {

@@ -154,7 +154,7 @@
   </div>
 </template>
 <script>
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;//Vue.config.silent = true;
+// Vue.config.silent = true;
 import axios from "axios";
 export default {
   data() {

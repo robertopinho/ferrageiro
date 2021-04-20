@@ -26,7 +26,7 @@
             <td>{{ cliente.email }}</td>
             <td>{{ cliente.cpf }}</td>
             <td>{{ cliente.telefone }}</td>
-            <td>{{ cidade && cidade[cliente.cidade_id -1] && cidade[cliente.cidade_id - 1].nome }}</td>
+            <td>{{ cidade && cidade[cliente.cidade_id - 1] && cidade[cliente.cidade_id - 1].nome }}</td>
             <td>{{ cliente.enderecoBairro }}</td>
           </tr>
         </tbody>
